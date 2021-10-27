@@ -44,6 +44,9 @@ angular.module("myapp", [])
                     address: $scope.user.address,
                     department: $scope.user.department,
                 }).then( function(response){
+                    var index = $scope.users.findIndex((obj => obj.id == $scope.user.id));
+                    $scope.users[index] = $scope.user;
+                    $scope.users[index].isActive = "active";
                     $scope.isShow = "";
                     $scope.error = "Cập nhật thành công."
                     $scope.errorBg = "background-color-default";
@@ -56,19 +59,22 @@ angular.module("myapp", [])
         }
 
         // delete user
-        $scope.deleteUser = function(){
+        $scope.deleteUser = function(userId){
             if ( $scope.user == null ) {
                 $scope.isShow = "";
                 $scope.error = "Vui lòng chọn nhân viên."
                 $scope.errorBg = "background-color-danger";
             } else {
-                $http.get(apiUrl+"/"+userId).then( function(response) {
+                $http.delete(apiUrl+"/"+userId).then( function(response) {
                     $scope.isShow = "";
                     $scope.error = "Xóa nhân viên thành công."
                     $scope.errorBg = "background-color-default";
+                    var index = $scope.users.findIndex((obj => obj.id == $scope.user.id));
+                    $scope.user = null;
+                    $scope.users.splice(index, 1);
                  }, function($respose){
                     $scope.isShow = "";
-                    $scope.error = "Xóa nhân viên thành công."
+                    $scope.error = "Xóa nhân viên không thành công."
                     $scope.errorBg = "background-color-danger";
                 });
             }

@@ -19,7 +19,7 @@
         <div ng-controller = "UserController" class="row">
             <div class="col-md-3 col-sm-2">
                 <section id="sidebar">
-                    <header><h1>Xin chào</h1></header>
+                    <header><h1>Danh sách</h1></header>
                     <aside>
                         <ul class="sidebar-navigation">
                             <li ng-repeat = "user in users" class="{{ user.isActive }}" ng-click = "selectUser(user.id)"><a href="javascript:;"><span>{{ user.fullname }}</span></a></li>
