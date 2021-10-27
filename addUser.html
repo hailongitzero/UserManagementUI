@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        
+        <!-- Angularjs -->
+        <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
+        <script src="./assets/js/app.js"></script>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="./assets/css/style.css">
+        <title>Quản lý nhân viên</title>
+    </head>
+    <body ng-app = "myapp" class="container">
+        <div ng-controller = "addUserController" class="row">
+            <div class="col-md-3 col-sm-2">
+                <section id="sidebar">
+                    <header><h1>Xin chào</h1></header>
+                    <aside>
+                    </aside>
+                </section>
+            </div>
+            <div class="col-md-9 col-sm-10">
+                <section id="profile">
+                    <header class="section-title">
+                        <h1>Thông tin</h1>
+                        <a href="./index.html" class="btn btn-default link-arrow">Trang chủ</a>
+                    </header>
+                    <div class="account-profile">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12">
+                                <p class="error-message {{errorBg}} p-1 {{isShow}}"><strong>{{error}}</strong></p>
+                            </div>
+                            <div class="col-md-12 col-sm-12">
+                                <form role="form" name="userForm" novalidate >
+                                    <section id="contact">
+                                        <dl class="contact-fields">
+                                            <dt><label for="username">Mã nhân viên:</label></dt>
+                                            <dd><div class="form-group">
+                                                <input type="text" class="form-control" name="username" ng-model = "username" required>
+                                                <span ng-show = "userForm.username.$error.required">Vui lòng nhập mã nhân viên.</span>
+                                            </div><!-- /.form-group --></dd>
+                                            <dt><label for="fullname">Họ tên:</label></dt>
+                                            <dd><div class="form-group">
+                                                <input type="text" class="form-control" name="fullname" ng-model = "fullname" required>
+                                                <span ng-show = "userForm.fullname.$error.required">Vui lòng nhập họ tên nhân viên.</span>
+                                            </div><!-- /.form-group --></dd>
+                                            <dt><label for="address">Địa chỉ:</label></dt>
+                                            <dd><div class="form-group">
+                                                <input type="text" class="form-control" name="address" ng-model = "address" required>
+                                                <span ng-show = "userForm.address.$error.required">Vui lòng nhập địa chỉ nhân viên.</span>
+                                            </div><!-- /.form-group --></dd>
+                                            <dt><label for="department">Phòng ban:</label></dt>
+                                            <dd><div class="form-group">
+                                                <input type="text" class="form-control" name="department" ng-model = "department" required>
+                                                <span ng-show = "userForm.department.$error.required">Vui lòng nhập phòng ban nhân viên.</span>
+                                            </div><!-- /.form-group --></dd>
+                                            <dd><div class="form-group">
+                                                <button type="button" class="btn btn-danger" ng-click="reset()">Làm mới</button>
+                                                <button type="button" class="btn btn-default" ng-disabled = "userForm.username.$invalid || userForm.fullname.$invalid || userForm.address.$invalid || userForm.department.$invalid" ng-click="addUser()" >Thêm</button>
+                                            </div><!-- /.form-group --></dd>
+                                        </dl>
+                                    </section>
+                                </form>
+                            </div><!-- /.col-md-9 -->
+                        </div><!-- /.row -->
+                    </div>
+                </section>
+            </div><!-- /.col-md-9 -->
+        </div><!-- /.row -->
+  </body>
+
+</html>

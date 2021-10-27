@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        
+        <!-- Angularjs -->
+        <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="./assets/css/style.css">
+        <title>Hello, world!</title>
+    </head>
+    <body ng-app = "myapp" class="container">
+        <div class="row">
+        <!-- sidebar -->
+        <div class="col-md-3 col-sm-2">
+            <section id="sidebar">
+                <header><h1>Nhân viên</h1></header>
+                <aside>
+                    <ul class="sidebar-navigation">
+                        <li class="active"><a href="javascript:;"><i class="fa fa-user"></i><span>Profile</span></a></li>
+                        <li><a href="javascript:;"><i class="fa fa-home"></i><span>My Properties</span></a></li>
+                        <li><a href="javascript:;"><i class="fa fa-heart"></i><span>Bookmarked Properties</span></a></li>
+                    </ul>
+                </aside>
+            </section><!-- /#sidebar -->
+        </div><!-- /.col-md-3 -->
+        <!-- end Sidebar -->
+            <!-- My Properties -->
+            <div class="col-md-9 col-sm-10">
+                <section id="profile">
+                    <header><h1>Thông tin</h1></header>
+                    <div class="account-profile">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12">
+                                <form role="form" id="form-account-profile" method="post" >
+                                    <section id="contact">
+                                        <dl class="contact-fields">
+                                            <dt><label for="form-account-name">Your Name:</label></dt>
+                                            <dd><div class="form-group">
+                                                <input type="text" class="form-control" id="form-account-name" name="form-account-name" required value="Jeffrey Scott">
+                                            </div><!-- /.form-group --></dd>
+                                            <dt><label for="form-account-phone">Phone:</label></dt>
+                                            <dd><div class="form-group">
+                                                <input type="text" class="form-control" id="form-account-phone" name="form-account-phone" value="(123) 456 789">
+                                            </div><!-- /.form-group --></dd>
+                                            <dt><label for="form-account-email">Email:</label></dt>
+                                            <dd><div class="form-group">
+                                                <input type="text" class="form-control" id="form-account-email" name="form-account-phone" value="jeffrey.scott@example.com">
+                                            </div><!-- /.form-group --></dd>
+                                            <dt><label for="form-account-skype">Skype:</label></dt>
+                                            <dd><div class="form-group">
+                                                <input type="text" class="form-control" id="form-account-skype" name="form-account-skype" value="jeffrey.scott">
+                                            </div><!-- /.form-group --></dd>
+                                            <dd><div class="form-group">
+                                                <button type="submit" class="btn btn-default" id="form-account-password-submit">Save</button>
+                                                <button type="submit" class="btn btn-danger" id="form-account-password-submit">Delete</button>
+                                            </div><!-- /.form-group --></dd>
+                                        </dl>
+                                    </section>
+                                </form><!-- /#form-contact -->
+                            </div><!-- /.col-md-9 -->
+                        </div><!-- /.row -->
+                    </div><!-- /.account-profile -->
+                </section><!-- /#profile -->
+            </div><!-- /.col-md-9 -->
+            <!-- end My Properties -->
+        </div><!-- /.row -->
+    <script>
+        angular.module("myapp", [])
+        
+        .controller("HelloController", function($scope) {
+            $scope.helloTo = {};
+            $scope.helloTo.title = "AngularJS";
+        });
+    </script>
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script> -->
+
+  </body>
+
+</html>
